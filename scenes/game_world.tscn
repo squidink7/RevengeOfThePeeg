@@ -3,8 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://c25avn5qa6fcg" path="res://assets/tile1.jpg" id="1_j6k4r"]
 [ext_resource type="Texture2D" uid="uid://dkcc44wswena6" path="res://assets/tile2.png" id="2_6dd51"]
 [ext_resource type="PackedScene" uid="uid://dwsrn8ltet4ot" path="res://prefabs/player.tscn" id="2_nhcqk"]
-[ext_resource type="PackedScene" uid="uid://imqpphntmu7e" path="res://prefabs/menu_ui.tscn" id="3_1gphe"]
-[ext_resource type="PackedScene" uid="uid://c7pnkkpc7lryc" path="res://prefabs/cabbages.tscn" id="4_ou21w"]
+[ext_resource type="PackedScene" uid="uid://caiox0bwofyup" path="res://prefabs/menu_ui.tscn" id="3_1gphe"]
+[ext_resource type="PackedScene" path="res://prefabs/cabbages.tscn" id="4_ou21w"]
+[ext_resource type="PackedScene" uid="uid://bloqx18bp51n8" path="res://prefabs/goal.tscn" id="6_gwarp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bpw6g"]
 texture = ExtResource("1_j6k4r")
@@ -49,3 +50,6 @@ unique_name_in_owner = true
 
 [node name="Cabbages" parent="." instance=ExtResource("4_ou21w")]
 position = Vector2(224, -32)
+
+[node name="Goal" parent="." instance=ExtResource("6_gwarp")]
+position = Vector2(1152, -96)
