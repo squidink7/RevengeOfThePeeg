@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c3rvaiv2p7eyq" path="res://Peeg/Untitled_Artwork-3.png" id="5_vb0a6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7veb"]
-size = Vector2(80, 32)
+size = Vector2(80, 37)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kiu1r"]
 animations = [{
@@ -52,6 +52,7 @@ animations = [{
 script = ExtResource("1_reg0w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_s7veb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
