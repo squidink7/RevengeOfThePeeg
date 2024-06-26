@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bloqx18bp51n8"]
+
+[ext_resource type="Texture2D" uid="uid://6lfbgv83mx85" path="res://assets/chest.png" id="1_fwr3r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khum2"]
+size = Vector2(64, 56)
+
+[node name="Goal" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fwr3r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_khum2")
