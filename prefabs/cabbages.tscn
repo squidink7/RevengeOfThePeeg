@@ -1,18 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7pnkkpc7lryc"]
+[gd_scene load_steps=4 format=3 uid="uid://b6ok804a2gsp0"]
 
 [ext_resource type="Script" path="res://scripts/Cabbages.gd" id="1_ouw7t"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_b01yd"]
+[ext_resource type="Texture2D" uid="uid://3ppclmixv5e1" path="res://assets/lettuce.png" id="2_fw5ge"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t6ldi"]
+radius = 24.0
 
 [node name="Cabbages" type="Area2D"]
 script = ExtResource("1_ouw7t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(2.38419e-07, 0)
-scale = Vector2(8.5, 9.5)
-texture = SubResource("PlaceholderTexture2D_b01yd")
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_fw5ge")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_t6ldi")
