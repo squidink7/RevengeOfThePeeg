@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7pnkkpc7lryc"]
+
+[ext_resource type="Script" path="res://scripts/Cabbages.gd" id="1_ouw7t"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_b01yd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t6ldi"]
+
+[node name="Cabbages" type="Area2D"]
+script = ExtResource("1_ouw7t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.38419e-07, 0)
+scale = Vector2(8.5, 9.5)
+texture = SubResource("PlaceholderTexture2D_b01yd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_t6ldi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
