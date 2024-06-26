@@ -9,6 +9,6 @@ func _ready():
 func add_score():
 	score+=1
 	$Control/Label.text= "score: " + str(score)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+
+func win_state():
+	$Control/youwin.visible = true 
