@@ -1,13 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwsrn8ltet4ot"]
+[gd_scene load_steps=7 format=3 uid="uid://cq5im7l8g4pg1"]
 
 [ext_resource type="Script" path="res://prefabs/player.gd" id="1_reg0w"]
 [ext_resource type="Texture2D" uid="uid://s6ps8toquqpc" path="res://Peeg/Untitled_Artwork-1.png" id="2_r0mxm"]
-[ext_resource type="Texture2D" uid="uid://cwed56pgks02g" path="res://icon.svg" id="3_2720f"]
 [ext_resource type="Texture2D" uid="uid://ce0iwbrgrqc5c" path="res://Peeg/Untitled_Artwork-2.png" id="4_iapm5"]
 [ext_resource type="Texture2D" uid="uid://c3rvaiv2p7eyq" path="res://Peeg/Untitled_Artwork-3.png" id="5_vb0a6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7veb"]
-size = Vector2(128, 128)
+size = Vector2(80, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kiu1r"]
 animations = [{
@@ -17,14 +16,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_2720f")
-}],
-"loop": true,
-"name": &"new_animation",
 "speed": 5.0
 }, {
 "frames": [{
@@ -43,9 +34,8 @@ animations = [{
 script = ExtResource("1_reg0w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("RectangleShape2D_s7veb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_kiu1r")
-animation = &"new_animation"
