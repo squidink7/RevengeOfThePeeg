@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://crscksfehdmj4"]
+
+[ext_resource type="Texture2D" uid="uid://4ojmsalcg5xh" path="res://assets/Untitled_Artwork.png" id="1_i0jrt"]
+
+[node name="Dragon" type="Node2D"]
+
+[node name="UntitledArtwork" type="Sprite2D" parent="."]
+position = Vector2(0, -9.53674e-07)
+scale = Vector2(3, 3)
+texture = ExtResource("1_i0jrt")
+flip_h = true

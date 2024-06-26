@@ -1,15 +1,71 @@
-[gd_scene load_steps=3 format=3 uid="uid://bloqx18bp51n8"]
+[gd_scene load_steps=11 format=3 uid="uid://bloqx18bp51n8"]
 
+[ext_resource type="Script" path="res://prefabs/goal.gd" id="1_fga04"]
 [ext_resource type="Texture2D" uid="uid://6lfbgv83mx85" path="res://assets/chest.png" id="1_fwr3r"]
+[ext_resource type="Texture2D" uid="uid://cf0qt2smwyp02" path="res://assets/chest/chest1.png" id="3_mujr7"]
+[ext_resource type="Texture2D" uid="uid://dfs3ucbb4mhu4" path="res://assets/chest/chest2.png" id="4_ps5hu"]
+[ext_resource type="Texture2D" uid="uid://be7bwtgtidkm8" path="res://assets/chest/chest3.png" id="5_7ixt8"]
+[ext_resource type="Texture2D" uid="uid://tbh068eda4tf" path="res://assets/chest/chest4.png" id="6_qmgy6"]
+[ext_resource type="Texture2D" uid="uid://3ppclmixv5e1" path="res://assets/lettuce.png" id="7_kogo3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_blpel"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fwr3r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mujr7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ps5hu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7ixt8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qmgy6")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khum2"]
-size = Vector2(64, 56)
+size = Vector2(72, 64)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fbndp"]
+particle_flag_disable_z = true
+direction = Vector3(0, -10, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 98, 0)
+scale_min = 0.4
+scale_max = 0.4
 
 [node name="Goal" type="Area2D"]
+script = ExtResource("1_fga04")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_fwr3r")
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_blpel")
+animation = &"open"
+frame_progress = 0.239391
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
+position = Vector2(-4, 0)
 shape = SubResource("RectangleShape2D_khum2")
+
+[node name="Particles" type="GPUParticles2D" parent="."]
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_fbndp")
+texture = ExtResource("7_kogo3")
+lifetime = 10.0
+one_shot = true
+explosiveness = 1.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
