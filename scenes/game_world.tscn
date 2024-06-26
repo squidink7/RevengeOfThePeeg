@@ -1,3 +1,23 @@
-[gd_scene format=3 uid="uid://bcwpkhw4yug4b"]
+[gd_scene load_steps=4 format=3 uid="uid://bcwpkhw4yug4b"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://c25avn5qa6fcg" path="res://tile1.jpg" id="1_j6k4r"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bpw6g"]
+texture = ExtResource("1_j6k4r")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSet" id="TileSet_qilb0"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_bpw6g")
+
+[node name="Game" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_qilb0")
+format = 2
+layer_0/tile_data = PackedInt32Array(65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0)
