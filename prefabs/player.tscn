@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cq5im7l8g4pg1"]
+[gd_scene load_steps=9 format=3 uid="uid://dwsrn8ltet4ot"]
 
 [ext_resource type="Script" path="res://prefabs/player.gd" id="1_reg0w"]
 [ext_resource type="Texture2D" uid="uid://s6ps8toquqpc" path="res://Peeg/Untitled_Artwork-1.png" id="2_r0mxm"]
+[ext_resource type="Texture2D" uid="uid://de7hfg81nq3" path="res://Peeg/jump_down.png" id="3_ecvga"]
+[ext_resource type="Texture2D" uid="uid://dejpdol2auwci" path="res://Peeg/jump_up.png" id="4_2o4hq"]
 [ext_resource type="Texture2D" uid="uid://ce0iwbrgrqc5c" path="res://Peeg/Untitled_Artwork-2.png" id="4_iapm5"]
 [ext_resource type="Texture2D" uid="uid://c3rvaiv2p7eyq" path="res://Peeg/Untitled_Artwork-3.png" id="5_vb0a6"]
 
@@ -16,6 +18,22 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ecvga")
+}],
+"loop": true,
+"name": &"jump_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_2o4hq")
+}],
+"loop": true,
+"name": &"jump_up",
 "speed": 5.0
 }, {
 "frames": [{
@@ -39,3 +57,4 @@ shape = SubResource("RectangleShape2D_s7veb")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_kiu1r")
+animation = &"jump_down"
