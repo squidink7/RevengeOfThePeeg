@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcwpkhw4yug4b"]
+[gd_scene load_steps=7 format=3 uid="uid://bcwpkhw4yug4b"]
 
 [ext_resource type="Texture2D" uid="uid://c25avn5qa6fcg" path="res://assets/tile1.jpg" id="1_j6k4r"]
 [ext_resource type="PackedScene" uid="uid://dwsrn8ltet4ot" path="res://prefabs/player.tscn" id="2_nhcqk"]
+[ext_resource type="PackedScene" uid="uid://imqpphntmu7e" path="res://prefabs/menu_ui.tscn" id="3_1gphe"]
+[ext_resource type="PackedScene" uid="uid://c7pnkkpc7lryc" path="res://prefabs/cabbages.tscn" id="4_ou21w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bpw6g"]
 texture = ExtResource("1_j6k4r")
@@ -31,3 +33,9 @@ position = Vector2(0, -80)
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="UI" parent="." instance=ExtResource("3_1gphe")]
+unique_name_in_owner = true
+
+[node name="Cabbages" parent="." instance=ExtResource("4_ou21w")]
+position = Vector2(224, -32)
