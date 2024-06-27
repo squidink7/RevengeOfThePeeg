@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bcwpkhw4yug4b"]
+[gd_scene load_steps=18 format=3 uid="uid://bcwpkhw4yug4b"]
 
 [ext_resource type="Texture2D" uid="uid://c25avn5qa6fcg" path="res://assets/tile1.jpg" id="1_j6k4r"]
 [ext_resource type="Texture2D" uid="uid://dkcc44wswena6" path="res://assets/tile2.png" id="2_6dd51"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" path="res://prefabs/cactus.tscn" id="7_tjgd4"]
 [ext_resource type="Texture2D" uid="uid://4ojmsalcg5xh" path="res://assets/Untitled_Artwork.png" id="8_bo6sx"]
 [ext_resource type="Script" path="res://scenes/dragon_fly.gd" id="9_7nu42"]
+[ext_resource type="Texture2D" uid="uid://bisb2xbpv3scn" path="res://assets/cloud1.png" id="10_o47ie"]
+[ext_resource type="Texture2D" uid="uid://dwao0jaim1ww0" path="res://assets/cloud2.png" id="11_xk5ab"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bpw6g"]
 texture = ExtResource("1_j6k4r")
@@ -116,3 +118,26 @@ libraries = {
 "": SubResource("AnimationLibrary_heam1")
 }
 script = ExtResource("9_7nu42")
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="Cloud1" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+position = Vector2(320, 80)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("10_o47ie")
+
+[node name="Cloud3" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+position = Vector2(984, 80)
+scale = Vector2(0.325, 0.313285)
+texture = ExtResource("11_xk5ab")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="Cloud2" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer2"]
+position = Vector2(616, 192)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_xk5ab")
