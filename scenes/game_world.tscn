@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bcwpkhw4yug4b"]
+[gd_scene load_steps=16 format=3 uid="uid://bcwpkhw4yug4b"]
 
 [ext_resource type="Texture2D" uid="uid://c25avn5qa6fcg" path="res://assets/tile1.jpg" id="1_j6k4r"]
 [ext_resource type="Texture2D" uid="uid://dkcc44wswena6" path="res://assets/tile2.png" id="2_6dd51"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://b6ok804a2gsp0" path="res://prefabs/cabbages.tscn" id="4_ou21w"]
 [ext_resource type="PackedScene" uid="uid://bloqx18bp51n8" path="res://prefabs/goal.tscn" id="6_gwarp"]
 [ext_resource type="PackedScene" path="res://prefabs/cactus.tscn" id="7_tjgd4"]
+[ext_resource type="Texture2D" uid="uid://4ojmsalcg5xh" path="res://assets/Untitled_Artwork.png" id="8_bo6sx"]
+[ext_resource type="Script" path="res://scenes/dragon_fly.gd" id="9_7nu42"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bpw6g"]
 texture = ExtResource("1_j6k4r")
@@ -29,6 +31,34 @@ tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_bpw6g")
 sources/1 = SubResource("TileSetAtlasSource_shwf6")
+
+[sub_resource type="Curve2D" id="Curve2D_tdoly"]
+_data = {
+"points": PackedVector2Array(12.3471, 78.5723, -12.3471, -78.5723, -24, 16, 49.3883, 0, -49.3883, 0, -168, -56, 72.96, -2.24492, -72.96, 2.24492, -512, 96, 4.48985, 65.1028, -4.48985, -65.1028, -656, 24, -65.1028, 1.12246, 65.1028, -1.12246, -528, -56, -85.3071, -1.12246, 85.3071, 1.12246, -168, 104, 0, 0, 0, 0, -34.2487, 42.8216, 0, 0, 0, 0, -24, 16)
+}
+point_count = 8
+
+[sub_resource type="Animation" id="Animation_8yoxa"]
+resource_name = "fly"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_heam1"]
+_data = {
+"fly": SubResource("Animation_8yoxa")
+}
 
 [node name="Game" type="Node2D"]
 
@@ -69,3 +99,20 @@ position = Vector2(1152, -96)
 
 [node name="Cactus" parent="." instance=ExtResource("7_tjgd4")]
 position = Vector2(674, 2)
+
+[node name="DragonPath" type="Path2D" parent="."]
+position = Vector2(720, -160)
+curve = SubResource("Curve2D_tdoly")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="DragonPath"]
+position = Vector2(-24, 16)
+rotates = false
+
+[node name="Dragon" type="Sprite2D" parent="DragonPath/PathFollow2D"]
+texture = ExtResource("8_bo6sx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DragonPath/PathFollow2D/Dragon"]
+libraries = {
+"": SubResource("AnimationLibrary_heam1")
+}
+script = ExtResource("9_7nu42")
