@@ -1,19 +1,19 @@
 [gd_scene load_steps=18 format=3 uid="uid://bcwpkhw4yug4b"]
 
-[ext_resource type="Texture2D" uid="uid://c25avn5qa6fcg" path="res://assets/tile1.jpg" id="1_dmux4"]
-[ext_resource type="Texture2D" uid="uid://dkcc44wswena6" path="res://assets/tile2.png" id="2_kvq01"]
-[ext_resource type="PackedScene" uid="uid://dwsrn8ltet4ot" path="res://prefabs/player.tscn" id="3_4fsqr"]
-[ext_resource type="PackedScene" uid="uid://caiox0bwofyup" path="res://prefabs/menu_ui.tscn" id="4_hhukt"]
-[ext_resource type="PackedScene" uid="uid://b6ok804a2gsp0" path="res://prefabs/cabbages.tscn" id="5_u3llk"]
-[ext_resource type="PackedScene" uid="uid://bloqx18bp51n8" path="res://prefabs/goal.tscn" id="6_jmd3v"]
-[ext_resource type="PackedScene" path="res://prefabs/cactus.tscn" id="7_nfgqv"]
-[ext_resource type="Texture2D" uid="uid://4ojmsalcg5xh" path="res://assets/Untitled_Artwork.png" id="8_m1ywx"]
-[ext_resource type="Script" path="res://levels/dragon_fly.gd" id="9_oguta"]
-[ext_resource type="Texture2D" uid="uid://bisb2xbpv3scn" path="res://assets/cloud1.png" id="10_iw37b"]
-[ext_resource type="Texture2D" uid="uid://dwao0jaim1ww0" path="res://assets/cloud2.png" id="11_5f3ru"]
+[ext_resource type="Texture2D" uid="uid://c25avn5qa6fcg" path="res://assets/tile1.jpg" id="1_u6j43"]
+[ext_resource type="Texture2D" uid="uid://dkcc44wswena6" path="res://assets/tile2.png" id="2_r8420"]
+[ext_resource type="PackedScene" uid="uid://dwsrn8ltet4ot" path="res://prefabs/player.tscn" id="3_5sqf4"]
+[ext_resource type="PackedScene" uid="uid://caiox0bwofyup" path="res://prefabs/menu_ui.tscn" id="4_kk0c0"]
+[ext_resource type="PackedScene" uid="uid://b6ok804a2gsp0" path="res://prefabs/cabbages.tscn" id="5_qsgqy"]
+[ext_resource type="PackedScene" uid="uid://bloqx18bp51n8" path="res://prefabs/goal.tscn" id="6_du6mv"]
+[ext_resource type="PackedScene" uid="uid://tlmfr16mlxca" path="res://prefabs/cactus.tscn" id="7_l4n4l"]
+[ext_resource type="Texture2D" uid="uid://4ojmsalcg5xh" path="res://assets/Untitled_Artwork.png" id="8_geu01"]
+[ext_resource type="Script" path="res://levels/level_one/dragon_fly.gd" id="9_dh71k"]
+[ext_resource type="Texture2D" uid="uid://bisb2xbpv3scn" path="res://assets/cloud1.png" id="10_tar50"]
+[ext_resource type="Texture2D" uid="uid://dwao0jaim1ww0" path="res://assets/cloud2.png" id="11_xsxwj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bpw6g"]
-texture = ExtResource("1_dmux4")
+texture = ExtResource("1_u6j43")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -21,7 +21,7 @@ texture_region_size = Vector2i(64, 64)
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_shwf6"]
-texture = ExtResource("2_kvq01")
+texture = ExtResource("2_r8420")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -69,7 +69,7 @@ tile_set = SubResource("TileSet_qilb0")
 format = 2
 layer_0/tile_data = PackedInt32Array(65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 12, 0, 0, 14, 0, 0, 13, 0, 0, -65519, 0, 0, -65518, 0, 0, 131069, 1, 0, 131070, 1, 0, 131071, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65549, 1, 0, 65550, 1, 0, 131086, 1, 0, 196622, 1, 0, 262158, 1, 0, 327694, 1, 0, 327693, 1, 0, 327692, 1, 0, 327691, 1, 0, 327690, 1, 0, 327689, 1, 0, 327688, 1, 0, 327687, 1, 0, 327686, 1, 0, 327685, 1, 0, 327684, 1, 0, 327683, 1, 0, 327682, 1, 0, 327681, 1, 0, 327680, 1, 0, 393215, 1, 0, 393214, 1, 0, 393213, 1, 0, 327677, 1, 0, 262141, 1, 0, 196605, 1, 0, 196613, 1, 0, 131077, 1, 0, 131076, 1, 0, 131075, 1, 0, 131074, 1, 0, 131073, 1, 0, 131072, 1, 0, 196607, 1, 0, 196606, 1, 0, 262142, 1, 0, 327678, 1, 0, 327679, 1, 0, 262143, 1, 0, 196608, 1, 0, 262144, 1, 0, 262145, 1, 0, 196609, 1, 0, 196610, 1, 0, 262146, 1, 0, 262147, 1, 0, 196611, 1, 0, 196612, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 196614, 1, 0, 131078, 1, 0, 131079, 1, 0, 196615, 1, 0, 262151, 1, 0, 262152, 1, 0, 196616, 1, 0, 131080, 1, 0, 131081, 1, 0, 196617, 1, 0, 262153, 1, 0, 262154, 1, 0, 196618, 1, 0, 131082, 1, 0, 131083, 1, 0, 196619, 1, 0, 262155, 1, 0, 262156, 1, 0, 196620, 1, 0, 131084, 1, 0, 131085, 1, 0, 196621, 1, 0, 262157, 1, 0)
 
-[node name="Player" parent="." instance=ExtResource("3_4fsqr")]
+[node name="Player" parent="." instance=ExtResource("3_5sqf4")]
 position = Vector2(0, -80)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -79,28 +79,28 @@ position_smoothing_enabled = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
-[node name="UI" parent="." instance=ExtResource("4_hhukt")]
+[node name="UI" parent="." instance=ExtResource("4_kk0c0")]
 unique_name_in_owner = true
 
-[node name="Cabbages" parent="." instance=ExtResource("5_u3llk")]
+[node name="Cabbages" parent="." instance=ExtResource("5_qsgqy")]
 position = Vector2(224, -32)
 
-[node name="Cabbages5" parent="." instance=ExtResource("5_u3llk")]
+[node name="Cabbages5" parent="." instance=ExtResource("5_qsgqy")]
 position = Vector2(136, -32)
 
-[node name="Cabbages2" parent="." instance=ExtResource("5_u3llk")]
+[node name="Cabbages2" parent="." instance=ExtResource("5_qsgqy")]
 position = Vector2(312, -32)
 
-[node name="Cabbages3" parent="." instance=ExtResource("5_u3llk")]
+[node name="Cabbages3" parent="." instance=ExtResource("5_qsgqy")]
 position = Vector2(400, -32)
 
-[node name="Cabbages4" parent="." instance=ExtResource("5_u3llk")]
+[node name="Cabbages4" parent="." instance=ExtResource("5_qsgqy")]
 position = Vector2(488, -32)
 
-[node name="Goal" parent="." instance=ExtResource("6_jmd3v")]
+[node name="Goal" parent="." instance=ExtResource("6_du6mv")]
 position = Vector2(1152, -96)
 
-[node name="Cactus" parent="." instance=ExtResource("7_nfgqv")]
+[node name="Cactus" parent="." instance=ExtResource("7_l4n4l")]
 position = Vector2(674, 2)
 
 [node name="DragonPath" type="Path2D" parent="."]
@@ -112,13 +112,13 @@ position = Vector2(-24, 16)
 rotates = false
 
 [node name="Dragon" type="Sprite2D" parent="DragonPath/PathFollow2D"]
-texture = ExtResource("8_m1ywx")
+texture = ExtResource("8_geu01")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DragonPath/PathFollow2D/Dragon"]
 libraries = {
 "": SubResource("AnimationLibrary_heam1")
 }
-script = ExtResource("9_oguta")
+script = ExtResource("9_dh71k")
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 
@@ -128,12 +128,12 @@ motion_scale = Vector2(0.1, 0.1)
 [node name="Cloud1" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
 position = Vector2(320, 80)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("10_iw37b")
+texture = ExtResource("10_tar50")
 
 [node name="Cloud3" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
 position = Vector2(984, 80)
 scale = Vector2(0.325, 0.313285)
-texture = ExtResource("11_5f3ru")
+texture = ExtResource("11_xsxwj")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground2"]
 motion_scale = Vector2(0.2, 0.2)
@@ -141,4 +141,4 @@ motion_scale = Vector2(0.2, 0.2)
 [node name="Cloud2" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer2"]
 position = Vector2(616, 192)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("11_5f3ru")
+texture = ExtResource("11_xsxwj")

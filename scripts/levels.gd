@@ -3,11 +3,7 @@ extends Node
 const levels_path = 'res://levels/'
 const ignored_levels = ['level_template.tscn']
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	var levels = load_levels()
-	
-	show_levels(levels)
+var current_level: String = ''
 
 func load_levels() -> Array[String]:
 	var levels: Array[String] = []
@@ -26,16 +22,16 @@ func load_levels() -> Array[String]:
 	
 	return levels
 
-func show_levels(levels: Array[String]):
-	for level in levels:
-		var level_name = level.trim_suffix('.tscn').replace('_', ' ')
+func next_level() -> String:
+	var levels = load_levels()
 
-		var level_button = Button.new()
+	var next_level = ''
 
-		level_button.text = level_name
-		level_button.pressed.connect(func(): play_level(level))
+	for i in range(len(levels)):
+		if levels[i] == current_level:
+			if len(levels) > i+1:
+				next_level = levels[i+1]
 	
-		%LevelsDisplay.add_child(level_button)
-
-func play_level(level):
-	get_tree().change_scene_to_file(levels_path + level)
+	current_level = next_level
+	
+	return next_level
