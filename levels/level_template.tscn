@@ -1,0 +1,82 @@
+[gd_scene load_steps=14 format=3 uid="uid://r2obi3q36cij"]
+
+[ext_resource type="Texture2D" uid="uid://c25avn5qa6fcg" path="res://assets/tile1.jpg" id="1_hl47v"]
+[ext_resource type="Texture2D" uid="uid://dkcc44wswena6" path="res://assets/tile2.png" id="2_8wget"]
+[ext_resource type="PackedScene" uid="uid://dwsrn8ltet4ot" path="res://prefabs/player.tscn" id="3_nsuej"]
+[ext_resource type="PackedScene" uid="uid://caiox0bwofyup" path="res://prefabs/menu_ui.tscn" id="4_cuvg4"]
+[ext_resource type="PackedScene" uid="uid://b6ok804a2gsp0" path="res://prefabs/cabbages.tscn" id="5_7ine5"]
+[ext_resource type="PackedScene" uid="uid://bloqx18bp51n8" path="res://prefabs/goal.tscn" id="6_hrdhc"]
+[ext_resource type="PackedScene" uid="uid://tlmfr16mlxca" path="res://prefabs/cactus.tscn" id="7_6eeiv"]
+[ext_resource type="Texture2D" uid="uid://bisb2xbpv3scn" path="res://assets/cloud1.png" id="10_jgejf"]
+[ext_resource type="Texture2D" uid="uid://dwao0jaim1ww0" path="res://assets/cloud2.png" id="11_hpm8f"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bpw6g"]
+texture = ExtResource("1_hl47v")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_shwf6"]
+texture = ExtResource("2_8wget")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_g58pe"]
+scenes/1/scene = ExtResource("6_hrdhc")
+scenes/2/scene = ExtResource("5_7ine5")
+scenes/3/scene = ExtResource("7_6eeiv")
+
+[sub_resource type="TileSet" id="TileSet_qilb0"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_bpw6g")
+sources/1 = SubResource("TileSetAtlasSource_shwf6")
+sources/2 = SubResource("TileSetScenesCollectionSource_g58pe")
+
+[node name="Game" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_qilb0")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65519, 0, 0, -65518, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("3_nsuej")]
+position = Vector2(0, -80)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="UI" parent="." instance=ExtResource("4_cuvg4")]
+unique_name_in_owner = true
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="Cloud1" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+position = Vector2(320, 80)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("10_jgejf")
+
+[node name="Cloud3" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+position = Vector2(984, 80)
+scale = Vector2(0.325, 0.313285)
+texture = ExtResource("11_hpm8f")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="Cloud2" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer2"]
+position = Vector2(616, 192)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_hpm8f")

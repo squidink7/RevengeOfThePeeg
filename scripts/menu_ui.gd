@@ -16,4 +16,4 @@ func next_level():
 		get_tree().change_scene_to_file(Levels.levels_path + next_level)
 	else:
 		print('no more levels, quitting...')
-		get_tree().quit()
+		get_tree().change_scene_to_file('res://scenes/main_menu.tscn')
